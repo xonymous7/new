@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #e6f7ff;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            color: #333;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            position: relative;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #loveButton {
+            background-color: #28a745;
+            color: white;
+        }
+
+        #loveButton:hover {
+            background-color: #218838;
+        }
+
+        #hateButton {
+            background-color: #ff4136;
+            color: white;
+            position: absolute;
+        }
+
+        #hateButton:hover {
+            background-color: #c0392b;
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            #hateButton {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Do You Love Me?</h1>
+
+    <div class="buttons">
+        <button id="loveButton">Yeah, I Love You</button>
+        <button id="hateButton">I Hate You</button>
+    </div>
+
+    <script>
+        const hateButton = document.getElementById('hateButton');
+
+        hateButton.addEventListener('mouseover', function() {
+            // Generate random position within the viewport
+            const x = Math.floor(Math.random() * (window.innerWidth - hateButton.clientWidth));
+            const y = Math.floor(Math.random() * (window.innerHeight - hateButton.clientHeight));
+            hateButton.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        hateButton.addEventListener('click', function() {
+            // Generate random position within the viewport
+            const x = Math.floor(Math.random() * (window.innerWidth - hateButton.clientWidth));
+            const y = Math.floor(Math.random() * (window.innerHeight - hateButton.clientHeight));
+            hateButton.style.transform = `translate(${x}px, ${y}px)`; // Move to a new position
+        });
+
+        const loveButton = document.getElementById('loveButton');
+        loveButton.addEventListener('click', function() {
+            alert('Aww, I love you too! 💖');
+        });
+    </script>
+
+</body>
+</html>
