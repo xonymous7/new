@@ -13,32 +13,35 @@
             height: 100vh;
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #e6f7ff;
+            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ff1d2d2d-2b2d-41ee-85d3-948fc2382396/db9aywk-7666b6e4-0301-4724-a4f2-fe9fd32b94f0.png/v1/fill/w_1024,h_1435,q_80,strp/la_la_land_by_haru_akira_db9aywk-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQzNSIsInBhdGgiOiJcL2ZcL2ZmMWQyZDJkLTJiMmQtNDFlZS04NWQzLTk0OGZjMjM4MjM5NlwvZGI5YXl3ay03NjY2YjZlNC0wMzAxLTQ3MjQtYTRmMi1mZTlmZDMyYjk0ZjAucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.OBaQ0sTkPh8CpE-XTNNAi1eUn0cfguyrY2-yW8TlYNg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         h1 {
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.5rem;
-            color: #333;
+            margin-bottom: 20px; 
+            font-size: 1.8rem; 
+            color: #fff; /* Changed to white to contrast the background */
             font-weight: bold;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5); 
         }
 
         .buttons {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             position: relative;
         }
 
         button {
-            padding: 15px 30px;
-            font-size: 1.2rem;
+            padding: 10px 20px;
+            font-size: 1rem;
             cursor: pointer;
             border: none;
             border-radius: 5px;
             transition: transform 0.3s ease, background-color 0.3s ease;
-            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.2);
         }
 
         #loveButton {
@@ -60,20 +63,19 @@
             background-color: #c0392b;
         }
 
-        /* Responsive design for mobile */
         @media (max-width: 600px) {
             h1 {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
 
             button {
-                padding: 10px 20px;
-                font-size: 1rem;
+                padding: 8px 15px;
+                font-size: 0.9rem;
             }
 
             .buttons {
                 flex-direction: column;
-                gap: 15px;
+                gap: 10px;
             }
 
             #hateButton {
@@ -95,17 +97,15 @@
         const hateButton = document.getElementById('hateButton');
 
         hateButton.addEventListener('mouseover', function() {
-            // Generate random position within the viewport
             const x = Math.floor(Math.random() * (window.innerWidth - hateButton.clientWidth));
             const y = Math.floor(Math.random() * (window.innerHeight - hateButton.clientHeight));
             hateButton.style.transform = `translate(${x}px, ${y}px)`;
         });
 
         hateButton.addEventListener('click', function() {
-            // Generate random position within the viewport
             const x = Math.floor(Math.random() * (window.innerWidth - hateButton.clientWidth));
             const y = Math.floor(Math.random() * (window.innerHeight - hateButton.clientHeight));
-            hateButton.style.transform = `translate(${x}px, ${y}px)`; // Move to a new position
+            hateButton.style.transform = `translate(${x}px, ${y}px)`;
         });
 
         const loveButton = document.getElementById('loveButton');
